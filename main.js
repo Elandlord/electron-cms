@@ -7,7 +7,9 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 10000, height: 100000})
+
+  mainWindow.maximize();
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
@@ -22,6 +24,8 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  mainWindow.loadURL('https://mentechmedia.nl/login');
 }
 
 // This method will be called when Electron has finished
@@ -45,6 +49,3 @@ app.on('activate', function () {
     createWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
